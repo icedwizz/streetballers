@@ -8,15 +8,20 @@ $name = $_POST['name'];
 $mail_from = $_POST['email'];
 $subject = 'Message sent from website';
 $message = $_POST['message'];
-  
+
 $header = "From: $name <$mail_from>";
 
    // Send it
    $sent = mail($to, $subject, $message, $header);
    if($sent) {
-   echo 'Your message has been sent successfully!';
+      echo '<script language="javascript">';
+      echo 'alert("message successfully sent")';
+    
+
    } else {
-   echo 'Sorry, your message could not send.';
+     echo '<script language="javascript">';
+
    }
+
 }
 ?>
